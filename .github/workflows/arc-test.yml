@@ -1,0 +1,16 @@
+name: arc-test
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: arc-runner-set
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show where we are running
+        run: |
+          echo "Runner: $RUNNER_NAME"
+          hostname
+          uname -a
+      - name: Prove Docker works
+        run: docker run --rm hello-world
+      - name: Hold the runner for a minute
+        run: sleep 60
