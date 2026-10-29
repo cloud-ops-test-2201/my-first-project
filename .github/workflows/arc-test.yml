@@ -2,7 +2,7 @@ name: arc-test
 on: workflow_dispatch
 jobs:
   test:
-    runs-on: arc-runner-set
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Show where we are running
